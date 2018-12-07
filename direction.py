@@ -29,10 +29,10 @@ def analogleft(input):
   RPL.servoWrite(L,leftanalog(input))
 
 #Analog reading to speed converter
-def leftanalog(input):
-  return(-0.23*input+1617)
 def rightanalog(input):
-  return(0.23*reading+1383)
+  return(int(-0.23*input+1617))
+def leftanalog(input):
+  return(int(0.23*input+1383))
 
 ###
 def stop():
