@@ -1,14 +1,18 @@
 import RoboPiLib as RPL
 import setup
 
-L = pin
-R = pin
+L = 0
+R = 1
 
 #converts a value 1-10 with a speed
 def convert(speed):
+<<<<<<< HEAD
   return(22.13*speed+1389.35)
 
 #Default Direction
+=======
+  return(int(22.13*speed+1389.35))
+>>>>>>> cdf3afff05a8bb28ea80c3fe22857ac97990e175
 def front(input):
   speed = convert(input)
   RPL.servoWrite(L,speed)
@@ -16,6 +20,7 @@ def front(input):
 def left(input):
   RPL.servoWrite(R,convert(input))
 def right(input):
+<<<<<<< HEAD
   RPL.servoWrite(L,convert(input))
 
 
@@ -33,3 +38,11 @@ def leftanalog(input):
   return(-0.23*input+1617)
 def rightanalog(input):
   return(0.23*reading+1383)
+=======
+  speed = convert(input)
+  RPL.servoWrite(L,speed)
+def stop():
+  pins = [0,1]
+  for x in pins:
+    RPL.servoWrite(x,0)
+>>>>>>> cdf3afff05a8bb28ea80c3fe22857ac97990e175
