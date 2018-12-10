@@ -1,9 +1,11 @@
 import RoboPiLib as RPL
 import setup
 import direction
-rightsensor = PIN
+apin = 7 #place the analog sensor on the front right
 
 while True:
-  direction.front(10)
-  while rightsensor == 0:
-    direction.left(7)
+  sense = RPL.analogRead(apin)
+  if sense >= 400:
+    direction.right(4)
+  else:
+    direction.front(0)

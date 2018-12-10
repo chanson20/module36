@@ -15,9 +15,9 @@ def front(input):
   RPL.servoWrite(R, convert(input)[0])
   RPL.servoWrite(L, convert(input)[1])
 def left(input):
-  RPL.servoWrite(R,convert(input))
+  RPL.servoWrite(R,convert(input)[0])
 def right(input):
-  RPL.servoWrite(L,convert(input))
+  RPL.servoWrite(L,convert(input)[1])
 def frontraw(input):
   RPL.servoWrite(L,input)
   RPL.servoWrite(R,-1*input+3000)
