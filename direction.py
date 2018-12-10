@@ -34,8 +34,8 @@ def rightanalog(input):
 def leftanalog(input):
   return(int(0.23*input+1383))
 
-###
+###Stop the Robots motors
 def stop():
-  pins = [0,1]
+  pins = [L,R]
   for x in pins:
     RPL.servoWrite(x,0)
