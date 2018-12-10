@@ -6,13 +6,14 @@ R = 1
 
 #converts a value 1-10 with a speed
 def convert(speed):
-  return(int(22.13*speed+1389.35))
+  R = int(-20 * speed + 1600)
+  L = int(20 * speed + 1400)
+  return(R,L)
 
 #Default direction
 def front(input):
-  speed = convert(input)
-  RPL.servoWrite(L,speed)
-  RPL.servoWrite(R,speed)
+  RPL.servoWrite(R, convert(input)[0])
+  RPL.servoWrite(L, convert(input)[1])
 def left(input):
   RPL.servoWrite(R,convert(input))
 def right(input):
