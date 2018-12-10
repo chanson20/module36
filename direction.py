@@ -17,7 +17,9 @@ def left(input):
   RPL.servoWrite(R,convert(input))
 def right(input):
   RPL.servoWrite(L,convert(input))
-
+def frontraw(input):
+  RPL.servoWrite(L,input)
+  RPL.servoWrite(R,-1*input+3000)
 
 #Analog direction
 def analogfront(input):
@@ -27,6 +29,9 @@ def analogright(input):
   RPL.servoWrite(R,rightanalog(input))
 def analogleft(input):
   RPL.servoWrite(L,leftanalog(input))
+def touch(input):
+  RPL.servoWrite(R,int(-0.1515 * input + 1600))
+  RPL.servoWrite(L,int(0.1515 * input + 1400))
 
 #Analog reading to speed converter
 def rightanalog(input):

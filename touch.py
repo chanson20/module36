@@ -1,11 +1,14 @@
 import direction
-apin = PIN
-#Configure this File
+import time
+pause = TIME HERE
+apin = 7
+
 while True:
   analog = RPL.analogRead(apin)
-  if analog <= 450:
-    direction.front(10)
-  elif analog <= 500:
-    direction.front(6)
-  elif analog >= PUT_VALUE_HERE
+  if analog <= 650:
+    direction.touch(analog)
+  else:
+    direction.frontraw(1505) #EDIT THIS
+    time.sleep(pause)
     direction.stop()
+    break
