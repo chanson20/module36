@@ -36,9 +36,15 @@ def touch(input):
 
 #Analog reading to speed converter
 def rightanalog(input):
-  return(int(-0.23*input+1617))
+  if input >= 500:
+    return(1500)
+  else:
+    return(int(-0.23*input+1617))
 def leftanalog(input):
-  return(int(0.23*input+1383))
+  if input >= 500:
+    return(1500)
+  else:
+    return(int(0.23*input+1383))
 
 ###Stop the Robots motors
 def stop():
